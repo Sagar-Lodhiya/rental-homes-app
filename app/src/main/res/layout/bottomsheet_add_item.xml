@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:minHeight="@dimen/_180sdp"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/add_items"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCustomTemplate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:itemCount="0"
+            tools:listitem="@layout/row_custom_template_item" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etItemName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="@string/item_name"
+            android:paddingVertical="@dimen/_8sdp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey_100"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintTop_toBottomOf="@id/rvCustomTemplate" />
+
+        <View
+            android:id="@+id/viewDivider"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/grey_100"
+            app:layout_constraintTop_toBottomOf="@id/etItemName" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvAddItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/box_grey_outline_curved_5"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_4sdp"
+            android:text="@string/add_item"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewDivider" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/bg_app_theme_button"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/btnCancel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAddItem" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/box_grey_outline_curved_10"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/cancel"
+            android:textColor="@color/grey_203"
+            app:layout_constraintBottom_toBottomOf="@id/btnSave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnSave"
+            app:layout_constraintTop_toTopOf="@id/btnSave" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

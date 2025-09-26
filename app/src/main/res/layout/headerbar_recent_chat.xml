@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainHeaderCL"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            style="@style/RecentChatTitleStyle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivBack"
+            app:layout_constraintRight_toLeftOf="@id/ivSearch"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_22sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_back"
+            android:visibility="gone"
+            app:tint="@color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@id/titleTV"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/titleTV" />
+
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:padding="@dimen/_2sdp"
+            android:src="@drawable/ic_search"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/titleTV"
+            app:layout_constraintLeft_toRightOf="@id/titleTV"
+            app:layout_constraintRight_toLeftOf="@id/ivAction"
+            app:layout_constraintTop_toTopOf="@id/titleTV"
+            app:tint="@color/darker_gray"
+            />
+
+
+        <ImageView
+            android:id="@+id/ivAction"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:padding="@dimen/_2sdp"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:src="@drawable/ic_more"
+            android:visibility="gone"
+            app:tint="@color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="@id/titleTV"
+            app:layout_constraintLeft_toRightOf="@id/ivSearch"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/titleTV" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:id="@+id/ivEdit"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/_8sdp"
+            android:padding="@dimen/_8sdp"
+            android:background="@drawable/circle_shape"
+            android:src="@drawable/ic_edit" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

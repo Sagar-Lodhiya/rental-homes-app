@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTier3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier3Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/tier_3_features"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/vdUnderTier1Title"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/grey_108"
+            app:layout_constraintTop_toBottomOf="@id/tvTier3Title" />
+
+        <!--Create template-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCreateTemplate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/tvTier3Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTier3Title">
+
+            <View
+                android:id="@+id/vdGreenCircle"
+                android:layout_width="@dimen/_14sdp"
+                android:layout_height="@dimen/_14sdp"
+                android:background="@drawable/bg_round_green"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPlus"
+                android:layout_width="@dimen/_8sdp"
+                android:layout_height="@dimen/_8sdp"
+                android:src="@drawable/ic_plus_icon"
+                android:tint="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/vdGreenCircle"
+                app:layout_constraintEnd_toEndOf="@id/vdGreenCircle"
+                app:layout_constraintStart_toStartOf="@id/vdGreenCircle"
+                app:layout_constraintTop_toTopOf="@id/vdGreenCircle" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvCreateTemplate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:text="@string/create_template"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="@id/vdGreenCircle"
+                app:layout_constraintEnd_toStartOf="@id/vdGreenCircle"
+                app:layout_constraintTop_toTopOf="@id/vdGreenCircle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--Propare Template-->
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvPropareTemplate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_drop_down_arrow"
+            android:drawablePadding="@dimen/_5sdp"
+            android:drawableTint="@color/grey_203"
+            android:text="@string/propare_template"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_10ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvTier3Title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTier3Title" />
+
+        <!--Dialog set as default-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDialogSetAsDefault"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/box_white_with_curved_shadow_5"
+            android:elevation="1dp"
+            android:padding="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tvPropareTemplate">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvSelectTemplate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_template"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectTemplate">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbPropareTemplate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_radio_button"
+                    android:fontFamily="@font/product_sans_bold"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/set_as_default"
+                    android:textColor="@color/grey_103"
+                    android:textSize="@dimen/_11ssp" />
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/rbCustomTemplate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@drawable/selector_radio_button"
+                    android:fontFamily="@font/product_sans_bold"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:text="@string/set_as_default"
+                    android:textColor="@color/grey_103"
+                    android:textSize="@dimen/_11ssp" />
+
+            </RadioGroup>
+
+            <View
+                android:id="@+id/viewDivider"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:background="@color/grey_100"
+                app:layout_constraintBottom_toBottomOf="@id/radioGroup"
+                app:layout_constraintTop_toTopOf="@id/radioGroup" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvPropareTemplateDialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/propare_template"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toTopOf="@id/viewDivider"
+                app:layout_constraintEnd_toStartOf="@id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/radioGroup" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvCustomTemplateDialog"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/custom_template"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@id/radioGroup"
+                app:layout_constraintEnd_toStartOf="@id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewDivider" />
+
+            <!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:src="@drawable/ic_like"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvLikeCounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:text="0 / 0%"
+            android:textColor="@color/color_green"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLike"
+            app:layout_constraintStart_toEndOf="@id/ivLike"
+            app:layout_constraintTop_toTopOf="@id/ivLike" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDisLike"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/ic_dislike"
+            app:layout_constraintEnd_toStartOf="@id/tvDisLikeCounts"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvDisLikeCounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:text="0 / 0%"
+            android:textColor="@color/red_101"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/ivLike"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLike" />
+
+        <ProgressBar
+            android:id="@+id/pbFeatures"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:progressDrawable="@drawable/progress_bar_features"
+            app:layout_constraintTop_toBottomOf="@id/ivLike" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFeaturesParent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pbFeatures"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:itemCount="4"
+            tools:listitem="@layout/row_features_parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".CropActivity">
+
+        <ImageView
+            android:id="@+id/ivOne"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/bg_blue_border"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/ivTwo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/ivOne"
+            app:layout_constraintLeft_toRightOf="@+id/ivOne" />
+
+        <ImageView
+            android:id="@+id/ivTwoVideo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_video_white"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivTwo"
+            app:layout_constraintLeft_toLeftOf="@+id/ivTwo" />
+
+        <ImageView
+            android:id="@+id/ivThree"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/ivOne"
+            app:layout_constraintLeft_toRightOf="@+id/ivTwo" />
+
+        <ImageView
+            android:id="@+id/ivThreeVideo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_video_white"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivThree"
+            app:layout_constraintLeft_toLeftOf="@+id/ivThree" />
+
+        <ImageView
+            android:id="@+id/ivFour"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/ivOne"
+            app:layout_constraintLeft_toRightOf="@+id/ivThree" />
+
+
+        <ImageView
+            android:id="@+id/ivFourVideo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_video_white"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFour"
+            app:layout_constraintLeft_toLeftOf="@+id/ivFour" />
+
+        <ImageView
+            android:id="@+id/ivFive"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@+id/ivOne"
+            app:layout_constraintLeft_toRightOf="@+id/ivFour" />
+
+
+        <ImageView
+            android:id="@+id/ivFiveVideo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_video_white"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivFive"
+            app:layout_constraintLeft_toLeftOf="@+id/ivFive" />
+
+        <ImageView
+            android:id="@+id/ivOneVideo"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/ic_video_white"
+            android:padding="@dimen/_5sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/ivOne"
+            app:layout_constraintLeft_toLeftOf="@+id/ivOne" />
+
+
+        <TextView
+            android:id="@+id/tvDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="DONE"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConTopHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:background="@color/dark_blue"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvFinal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Done"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvCrop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Crop"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvTrim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_15sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Trim"
+                android:textColor="@color/white"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vpCarsImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:adapter="@{pagerAdapter}"
+            android:background="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/ivOne"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ConTopHeader" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <data>
+
+        <variable
+            name="pagerAdapter"
+            type="com.rentalhomes.ui.common.crop.ImagePagerAdapter" />
+    </data>
+</layout>

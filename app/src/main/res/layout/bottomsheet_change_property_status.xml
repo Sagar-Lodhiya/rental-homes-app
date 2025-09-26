@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:padding="@dimen/_10sdp">
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvForSale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/property_status_for_sale"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvAuction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/property_status_auction"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvForSale" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvUnderOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/property_status_under_offer"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAuction" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvUnderContract"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/property_status_under_contract"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUnderOffer" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvSold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/property_status_sold"
+            android:textColor="@color/grey_203"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUnderContract" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

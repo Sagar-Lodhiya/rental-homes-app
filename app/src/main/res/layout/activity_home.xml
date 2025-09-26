@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeVM"
+            type="com.rentalhomes.ui.agent.homescreen.AgentHomeVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.agent.homescreen.AgentHomeActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/no_data_found" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPropare"
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_1" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civProfile"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->homeVM.onProfilePressed()}"
+            android:src="@drawable/ic_profile_place_holder"
+            app:civ_border_color="@color/grey_100"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginTop="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->homeVM.onNotificationPressed()}"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintEnd_toStartOf="@id/civProfile"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivChat"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_28sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->homeVM.onMessageClicked()}"
+            android:src="@drawable/ic_chat"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvMyListings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/my_listings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_18sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPropare" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivAddNonListed"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_17sdp"
+            android:onClick="@{()->homeVM.onAddNonListedPressed()}"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/civProfile"
+            app:srcCompat="@drawable/ic_add_new" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefreshListed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/llPropertyListType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMyListings">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/row_listed" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefreshOffMarket"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/llPropertyListType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMyListings">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOffMarket"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="5"
+                tools:listitem="@layout/row_listed" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/llPropertyListType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            android:background="@drawable/bg_green"
+            android:backgroundTint="@color/green_102"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_7sdp"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvListed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:gravity="center"
+                android:onClick="@{()->homeVM.onListTypeSelected(0)}"
+                android:padding="@dimen/_9sdp"
+                android:text="Listed"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvOffMarket"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{()->homeVM.onListTypeSelected(1)}"
+                android:padding="@dimen/_9sdp"
+                android:text="Off Market"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

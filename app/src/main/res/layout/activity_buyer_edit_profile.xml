@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="buyerEditProfileVM"
+            type="com.rentalhomes.ui.buyer.editprofile.BuyerEditProfileVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.agent.editprofile.EditProfileActivity">
+
+        <!--Header-->
+        <include
+            android:id="@+id/headerBar"
+            layout="@layout/header_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/_30sdp"
+                android:paddingBottom="@dimen/_20sdp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civProfile"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:src="@drawable/ic_profile_place_holder"
+                    app:civ_border_color="@color/grey_100"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--Profile Photo Browse or Capture-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clProfilePhoto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/civProfile"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/civProfile"
+                    app:layout_constraintTop_toTopOf="@id/civProfile">
+
+                    <com.rentalhomes.utils.customviews.RegularTextView
+                        android:id="@+id/tvProfilePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_photo"
+                        android:textColor="@color/grey_700"
+                        android:textSize="@dimen/_16ssp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.rentalhomes.utils.customviews.RegularTextView
+                        android:id="@+id/tvUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:onClick="@{()->buyerEditProfileVM.onUpdateClicked()}"
+                        android:text="@string/browse"
+                        android:textColor="@color/color_green"
+                        android:textSize="@dimen/_13ssp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvProfilePhoto" />
+
+                    <com.rentalhomes.utils.customviews.RegularTextView
+                        android:id="@+id/tvOr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:text="@string/or"
+                        android:textColor="@color/grey_100"
+                        android:textSize="@dimen/_11ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvUpdate"
+                        app:layout_constraintStart_toEndOf="@id/tvUpdate"
+                        app:layout_constraintTop_toTopOf="@id/tvUpdate" />
+
+                    <com.rentalhomes.utils.customviews.RegularTextView
+                        android:id="@+id/tvRemove"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:onClick="@{()->buyerEditProfileVM.onRemoveClicked()}"
+                        android:text="@string/remove"
+                        android:textColor="@color/red_101"
+                        android:textSize="@dimen/_13ssp"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/tvOr"
+                        app:layout_constraintStart_toEndOf="@id/tvOr"
+                        app:layout_constraintTop_toTopOf="@id/tvUpdate" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/vdUnderProfilePic"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/civProfile" />
+
+                <!--First Name-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvFirstName"
+                    style="@style/textView_grey_100_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/hint_first_name"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderProfilePic" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etFirstName"
+                    style="@style/editText_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="18"
+                    android:text="@={buyerEditProfileVM.firstName}"
+                    app:layout_constraintTop_toBottomOf="@id/tvFirstName" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvValFirstName"
+                    style="@style/textView_validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/etFirstName"
+                    tools:text="@string/msg_empty_email" />
+
+                <View
+                    android:id="@+id/vdUnderFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/tvValFirstName" />
+
+                <!--Last Name-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLastName"
+                    style="@style/textView_grey_100_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/hint_last_name"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderFirstName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etLastName"
+                    style="@style/editText_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLength="18"
+                    android:text="@={buyerEditProfileVM.lastName}"
+                    app:layout_constraintTop_toBottomOf="@id/tvLastName" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvValLastName"
+                    style="@style/textView_validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/etLastName"
+                    tools:text="@string/msg_empty_email" />
+
+                <View
+                    android:id="@+id/vdUnderLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/tvValLastName" />
+
+                <!--Email-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvEmail"
+                    style="@style/textView_grey_100_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/email"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderLastName" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etEmail"
+                    style="@style/editText_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvValEmail"
+                    style="@style/textView_validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/etEmail"
+                    tools:text="@string/msg_empty_email" />
+
+                <View
+                    android:id="@+id/vdUnderEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/tvValEmail" />
+
+                <!--Mobile-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMobile"
+                    style="@style/textView_grey_100_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/mobile"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderEmail" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMobile"
+                    style="@style/editText_edit_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="12"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="0dp"
+                    android:text="@={buyerEditProfileVM.mobile}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvCountryCode"
+                    app:layout_constraintTop_toBottomOf="@id/tvMobile" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvCountryCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/australia_phone_country_code"
+                    android:textColor="@color/grey_200"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/etMobile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/etMobile" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvValMobile"
+                    style="@style/textView_validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/etMobile"
+                    tools:text="@string/msg_empty_email" />
+
+                <View
+                    android:id="@+id/vdUnderMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/tvValMobile" />
+
+                <!--Pin-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvSuburb"
+                    style="@style/textView_grey_100_12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/suburb"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderMobile" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etSuburb"
+                    style="@style/editText_edit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:focusableInTouchMode="false"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:text="@={buyerEditProfileVM.suburb}"
+                    app:layout_constraintTop_toBottomOf="@id/tvSuburb" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvValSuburb"
+                    style="@style/textView_validation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/etSuburb"
+                    tools:text="@string/msg_empty_email" />
+
+                <View
+                    android:id="@+id/vdUnderPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintTop_toBottomOf="@id/tvValSuburb" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSave"
+                    style="@style/button_de_active"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/_40sdp"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:background="@drawable/box_disable_curved_8"
+                    android:onClick="@{()->buyerEditProfileVM.onSavePressed()}"
+                    android:text="@string/save"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderPin" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

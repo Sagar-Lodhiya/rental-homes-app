@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="buyerHomeVM"
+            type="com.rentalhomes.ui.buyer.home.BuyerHomeVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.buyer.home.BuyerHomeActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTopMenu"
+            app:srcCompat="@drawable/no_data_found" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivPropare"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_13sdp"
+            android:src="@drawable/logo_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civProfile"
+            android:layout_width="@dimen/_27sdp"
+            android:layout_height="@dimen/_27sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->buyerHomeVM.onProfileClick()}"
+            android:src="@drawable/ic_profile_place_holder"
+            app:civ_border_color="@color/grey_100"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSettings"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_19sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->buyerHomeVM.onFilterClick()}"
+            android:src="@drawable/ic_filter"
+            app:layout_constraintBottom_toBottomOf="@id/ivNotification"
+            app:layout_constraintEnd_toStartOf="@id/civProfile"
+            app:layout_constraintTop_toTopOf="@id/ivNotification" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNotification"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:onClick="@{()->buyerHomeVM.onNotificationClick()}"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintEnd_toStartOf="@id/ivSettings"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivChat"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{()->buyerHomeVM.onMessageClick()}"
+            android:src="@drawable/ic_chat"
+            app:layout_constraintBottom_toBottomOf="@id/ivPropare"
+            app:layout_constraintEnd_toStartOf="@id/ivNotification"
+            app:layout_constraintTop_toTopOf="@id/ivPropare"
+            app:layout_constraintVertical_bias="0.545" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvMyProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/my_properties"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivPropare" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivInfo"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:onClick="@{()->buyerHomeVM.onPropertyInfoClick()}"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_info"
+            android:tint="@color/color_green"
+            app:layout_constraintBottom_toBottomOf="@id/tvMyProperties"
+            app:layout_constraintStart_toEndOf="@id/tvMyProperties"
+            app:layout_constraintTop_toTopOf="@id/tvMyProperties" />
+
+        <!--<com.propare.utils.customviews.RegularTextView
+            android:id="@+id/tvBuyerHomeNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:text="@string/buyer_home_note"
+            android:textColor="@color/grey_light"
+            android:textSize="@dimen/_9sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvMyProperties"
+            app:layout_constraintTop_toBottomOf="@id/tvMyProperties" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTopMenu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/user_select_unchecked"
+            android:padding="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMyProperties">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivScanQr"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_22sdp"
+                android:onClick="@{()->buyerHomeVM.onScanQRClick()}"
+                app:layout_constraintEnd_toEndOf="@id/tvScanQr"
+                app:layout_constraintStart_toStartOf="@id/tvScanQr"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_scan_qr" />
+
+            <View
+                android:id="@+id/scanView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:onClick="@{()->buyerHomeVM.onScanQRClick()}"
+                app:layout_constraintBottom_toTopOf="@id/tvScanQr"
+                app:layout_constraintEnd_toEndOf="@id/ivScanQr"
+                app:layout_constraintStart_toStartOf="@id/ivScanQr"
+                app:layout_constraintTop_toBottomOf="@id/ivScanQr" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvScanQr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:onClick="@{()->buyerHomeVM.onScanQRClick()}"
+                android:text="@string/scan_qr"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvMapView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivScanQr" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMapView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/_1sdp"
+                android:onClick="@{()->buyerHomeVM.onMapViewClick()}"
+                app:layout_constraintBottom_toBottomOf="@id/ivScanQr"
+                app:layout_constraintEnd_toEndOf="@id/tvMapView"
+                app:layout_constraintStart_toStartOf="@id/tvMapView"
+                app:layout_constraintTop_toTopOf="@id/ivScanQr"
+                app:srcCompat="@drawable/ic_map_view" />
+
+            <View
+                android:id="@+id/mapView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_8sdp"
+                android:onClick="@{()->buyerHomeVM.onMapViewClick()}"
+                app:layout_constraintBottom_toTopOf="@id/tvMapView"
+                app:layout_constraintEnd_toEndOf="@id/ivMapView"
+                app:layout_constraintStart_toStartOf="@id/ivMapView"
+                app:layout_constraintTop_toBottomOf="@id/ivMapView" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvMapView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:gravity="center"
+                android:onClick="@{()->buyerHomeVM.onMapViewClick()}"
+                android:text="@string/map_view"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvScanQr"
+                app:layout_constraintEnd_toStartOf="@id/tvPropertyRecommend"
+                app:layout_constraintStart_toEndOf="@id/tvScanQr"
+                app:layout_constraintTop_toTopOf="@id/tvScanQr" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPropertyRecommend"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:onClick="@{()->buyerHomeVM.onRecommendClick()}"
+                app:layout_constraintBottom_toBottomOf="@id/ivMapView"
+                app:layout_constraintEnd_toEndOf="@id/tvPropertyRecommend"
+                app:layout_constraintStart_toStartOf="@id/tvPropertyRecommend"
+                app:layout_constraintTop_toTopOf="@id/ivMapView"
+                app:srcCompat="@drawable/ic_buyer_home_property" />
+
+            <View
+                android:id="@+id/recommendView"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_2sdp"
+                android:onClick="@{()->buyerHomeVM.onRecommendClick()}"
+                app:layout_constraintBottom_toTopOf="@id/tvPropertyRecommend"
+                app:layout_constraintEnd_toEndOf="@id/ivPropertyRecommend"
+                app:layout_constraintStart_toStartOf="@id/ivPropertyRecommend"
+                app:layout_constraintTop_toBottomOf="@id/ivPropertyRecommend" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvPropertyRecommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:gravity="center"
+                android:onClick="@{()->buyerHomeVM.onRecommendClick()}"
+                android:text="@string/property_recommendation"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvMapView"
+                app:layout_constraintEnd_toStartOf="@id/tvNonListed"
+                app:layout_constraintStart_toEndOf="@id/tvMapView"
+                app:layout_constraintTop_toTopOf="@id/tvMapView" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivNonListed"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:onClick="@{()->buyerHomeVM.onNonListed()}"
+                android:layout_marginBottom="@dimen/_1sdp"
+                app:layout_constraintBottom_toBottomOf="@id/ivPropertyRecommend"
+                app:layout_constraintEnd_toEndOf="@id/tvNonListed"
+                app:layout_constraintStart_toStartOf="@id/tvNonListed"
+                app:layout_constraintTop_toTopOf="@id/ivPropertyRecommend"
+                app:srcCompat="@drawable/ic_non_listed" />
+
+            <View
+                android:id="@+id/nonListedView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:onClick="@{()->buyerHomeVM.onNonListed()}"
+                app:layout_constraintBottom_toTopOf="@id/tvNonListed"
+                app:layout_constraintEnd_toEndOf="@id/ivNonListed"
+                app:layout_constraintStart_toStartOf="@id/ivNonListed"
+                app:layout_constraintTop_toBottomOf="@id/ivNonListed" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvNonListed"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="@dimen/_2sdp"
+                android:onClick="@{()->buyerHomeVM.onNonListed()}"
+                android:text="@string/add_non_listed_property"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_8sdp"
+                app:layout_constraintBottom_toBottomOf="@id/tvPropertyRecommend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvPropertyRecommend"
+                app:layout_constraintTop_toTopOf="@id/tvPropertyRecommend" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeToRefresh"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTopMenu">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuyerHomeList"
+                android:layout_width="0dp"
+                tools:itemCount="5"
+                tools:listitem="@layout/row_buyer_home_list"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fBtnCompare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:background="@color/color_green"
+            android:backgroundTint="@color/color_green"
+            android:onClick="@{()->buyerHomeVM.onCompareClick()}"
+            android:scaleType="center"
+            android:src="@drawable/ic_compare"
+            android:visibility="visible"
+            app:fabCustomSize="@dimen/_50sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:maxImageSize="@dimen/_30sdp"
+            app:tint="@color/white" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvCompareNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/bg_app_theme_button"
+            android:backgroundTint="@color/yellow_200"
+            android:gravity="center"
+            android:onClick="@{()->buyerHomeVM.onCompareNowClick()}"
+            android:paddingHorizontal="@dimen/_30sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            android:text="@string/compare_now"
+            android:textColor="@color/black_201"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

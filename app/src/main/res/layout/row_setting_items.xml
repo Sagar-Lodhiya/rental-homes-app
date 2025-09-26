@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clSettingItems"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <!--Terms of Service-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivItemIcon"
+            android:layout_width="@dimen/_16sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:layout_marginVertical="@dimen/_16sdp"
+            android:src="@drawable/ic_terms_conditions"
+            app:layout_constraintBottom_toTopOf="@id/vdSettingItem"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tvItemName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:text="@string/logout"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivItemIcon"
+            app:layout_constraintLeft_toRightOf="@id/ivItemIcon"
+            app:layout_constraintTop_toTopOf="@id/ivItemIcon" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRightArrow"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:src="@drawable/ic_right_arrow"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemName" />
+
+        <View
+            android:id="@+id/vdSettingItem"
+            android:layout_width="0dp"
+            android:layout_height="0.8dp"
+            android:background="@color/grey_100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/ivRightArrow"
+            app:layout_constraintStart_toStartOf="@id/ivItemIcon"
+            app:layout_constraintTop_toBottomOf="@id/ivItemIcon" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTier2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/tier_2_layout"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTier2Info"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_info"
+            android:tint="@color/color_green"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTier2Title"
+            app:layout_constraintStart_toEndOf="@id/tvTier2Title"
+            app:layout_constraintTop_toTopOf="@+id/tvTier2Title" />
+
+        <View
+            android:id="@+id/vdUnderTier1Title"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/grey_108"
+            app:layout_constraintTop_toBottomOf="@id/tvTier2Title" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llRatingScoreTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvRatingScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_score"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRatingScoreAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp" />
+            <!--                android:src="@drawable/ic_exceeds"-->
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--            android:text="@string/higher_than_expectations"-->
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvRatingText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/llRatingScoreTextView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTier2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingText"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_rating_score" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSaveTier2"
+            style="@style/button_active"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/bg_app_theme_button"
+            android:text="@string/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvTier2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

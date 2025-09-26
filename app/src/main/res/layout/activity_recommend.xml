@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="recommendVM"
+            type="com.rentalhomes.ui.agent.recommend.RecommendVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.agent.recommend.RecommendActivity">
+
+        <include
+            android:id="@+id/headerBar"
+            layout="@layout/header_bar" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/rvRecommend"
+            app:layout_constraintEnd_toEndOf="@id/rvRecommend"
+            app:layout_constraintStart_toStartOf="@id/rvRecommend"
+            app:layout_constraintTop_toTopOf="@id/rvRecommend"
+            app:srcCompat="@drawable/no_data_found" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clTop"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_green"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:maxLines="2"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                android:text="IIT,Jodhpur"
+                app:layout_constraintEnd_toStartOf="@+id/ivQrCode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                app:srcCompat="@drawable/ic_location_pin" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@+id/tvAddress"
+                app:layout_constraintStart_toEndOf="@id/ivLocation"
+                app:layout_constraintTop_toTopOf="@+id/ivLocation"
+                android:text="Jodhpur,Rajasthan,India"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivQrCode"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:src="@drawable/ic_qr"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_qr" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecommend"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/llRecommendType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTop"
+            tools:listitem="@layout/row_recommend" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvProspects"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/llRecommendType"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clTop" />
+
+        <LinearLayout
+            android:id="@+id/llRecommendType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/bg_green"
+            android:backgroundTint="@color/green_102"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_5sdp"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvRecommend"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:gravity="center"
+                android:onClick="@{()->recommendVM.onRecommendClick()}"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/recommend"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvProspects"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{()->recommendVM.onProspectsClick()}"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/prospects"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

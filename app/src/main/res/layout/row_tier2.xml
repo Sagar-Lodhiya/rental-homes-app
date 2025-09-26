@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:clipToPadding="false">
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="-5dp"
+            android:background="@color/white"
+            android:gravity="left|center_vertical"
+            android:paddingVertical="@dimen/_10sdp"
+            android:paddingStart="@dimen/_15sdp"
+            android:text="Location"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:ems="10"
+            android:maxEms="10"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/clImage1"
+            app:layout_constraintEnd_toStartOf="@id/clImage1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clImage1" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImage1"
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-12dp"
+            android:background="@drawable/bg_middle_shadow"
+            android:elevation="@dimen/_20sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/clImage2"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvRowOneComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:maxLines="1"
+                android:text="Exceeds"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toTopOf="@id/ivRowOneEmoji"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRowOneEmoji"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRowOneComment"
+                app:srcCompat="@drawable/ic_exceeds" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvNA1"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_22sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImage2"
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-5dp"
+            android:background="@drawable/bg_middle_shadow"
+            android:elevation="@dimen/_20sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/clImage1"
+            app:layout_constraintEnd_toStartOf="@id/clImage3"
+            app:layout_constraintTop_toTopOf="@id/clImage1">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvRowTwoComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Zero"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toTopOf="@id/ivRowTwoEmoji"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRowTwoEmoji"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRowTwoComment"
+                app:srcCompat="@drawable/ic_exceeds" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvNA2"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_22sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImage3"
+            android:layout_width="@dimen/_54sdp"
+            android:layout_height="0dp"
+            android:layout_marginStart="-5dp"
+            android:background="@drawable/bg_middle_shadow"
+            android:elevation="@dimen/_20sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/clImage1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/clImage1">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvRowThreeComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="Zero"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toTopOf="@id/ivRowThreeEmoji"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRowThreeEmoji"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvRowThreeComment"
+                app:srcCompat="@drawable/ic_exceeds" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvNA3"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/grey_200"
+                android:textSize="@dimen/_22sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

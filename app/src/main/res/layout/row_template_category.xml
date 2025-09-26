@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/clTemplateCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/box_grey_outline_curved_5"
+            android:paddingHorizontal="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--Category name-->
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvTemplateCategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/_12sdp"
+                android:text="@string/app_name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toStartOf="@id/clAddItems"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Add items-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clAddItems"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/tvTemplateCategory"
+                app:layout_constraintEnd_toStartOf="@id/ivDownArrow"
+                app:layout_constraintTop_toTopOf="@id/tvTemplateCategory">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvAddItems"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="@string/add_items"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/vdGreenCircle"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginEnd="@dimen/_10sdp" />
+
+                <View
+                    android:id="@+id/vdGreenCircle"
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:background="@drawable/bg_round_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tvAddItems"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivPlus"
+                    android:layout_width="@dimen/_8sdp"
+                    android:layout_height="@dimen/_8sdp"
+                    android:src="@drawable/ic_plus_icon"
+                    android:tint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/vdGreenCircle"
+                    app:layout_constraintEnd_toEndOf="@id/vdGreenCircle"
+                    app:layout_constraintStart_toStartOf="@id/vdGreenCircle"
+                    app:layout_constraintTop_toTopOf="@id/vdGreenCircle" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Drop down arrow-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDownArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_drop_down_arrow"
+                app:layout_constraintBottom_toBottomOf="@id/tvTemplateCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvTemplateCategory" />
+
+            <View
+                android:id="@+id/vdUnderTitle"
+                android:layout_width="0dp"
+                android:layout_height="0.8dp"
+                android:background="@color/grey_100"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTemplateCategory" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTemplateItem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderTitle"
+                tools:itemCount="4"
+                tools:listitem="@layout/row_template_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

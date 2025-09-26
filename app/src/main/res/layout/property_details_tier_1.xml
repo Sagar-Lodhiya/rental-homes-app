@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTier1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/_10sdp"
+        android:visibility="gone">
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier2Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="@string/tier_1_general"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivTier1Info"
+            android:layout_width="@dimen/_21sdp"
+            android:layout_height="@dimen/_21sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:padding="@dimen/_3sdp"
+            android:src="@drawable/ic_info"
+            android:tint="@color/color_green"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTier2Title"
+            app:layout_constraintStart_toEndOf="@id/tvTier2Title"
+            app:layout_constraintTop_toTopOf="@+id/tvTier2Title" />
+
+        <View
+            android:id="@+id/vdUnderTier1Title"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/grey_108"
+            app:layout_constraintTop_toBottomOf="@id/tvTier2Title" />
+
+        <!--Tab Details & Scoring-->
+        <!--<LinearLayout
+            android:id="@+id/llTier1Tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_green"
+            android:backgroundTint="@color/green_102"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_7sdp"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title">
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvScoring"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/_12sdp"
+                android:text="@string/scoring"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>-->
+
+        <!--Details Start-->
+        <!--<androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDetails"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title">
+
+            <com.propare.utils.customviews.BoldTextView
+                android:id="@+id/tvPropertyValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/property_value"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvMarketValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:text="@string/market_value"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toStartOf="@id/tvMyValuation"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPropertyValue" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvMyValuation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/my_valuation"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvMarketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvPropertyValue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMarketValue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_white_curved_5"
+                android:backgroundTint="@color/grey_109"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvMarketValue"
+                app:layout_constraintStart_toStartOf="@id/tvMarketValue"
+                app:layout_constraintTop_toBottomOf="@id/tvMarketValue" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvDollarMarketValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/dollar_sign"
+                android:textColor="@color/grey_103"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/etMarketValue"
+                app:layout_constraintStart_toStartOf="@id/etMarketValue"
+                app:layout_constraintTop_toTopOf="@id/etMarketValue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMyValuation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_white_curved_5"
+                android:backgroundTint="@color/grey_109"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/_8sdp"
+                android:paddingStart="@dimen/_20sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@id/tvMyValuation"
+                app:layout_constraintStart_toStartOf="@id/tvMyValuation"
+                app:layout_constraintTop_toBottomOf="@id/tvMyValuation" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvDollarMyValuation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:text="@string/dollar_sign"
+                android:textColor="@color/grey_103"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/etMyValuation"
+                app:layout_constraintStart_toStartOf="@id/etMyValuation"
+                app:layout_constraintTop_toTopOf="@id/etMyValuation" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvAgentCanSee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agent_can_see_this"
+                android:textColor="@color/grey_400"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@id/etMarketValue"
+                app:layout_constraintTop_toBottomOf="@id/etMarketValue" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvYouCanSee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/only_you_can_see_this"
+                android:textColor="@color/grey_400"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintEnd_toEndOf="@id/etMyValuation"
+                app:layout_constraintTop_toBottomOf="@id/etMyValuation" />
+
+            <View
+                android:id="@+id/vdUnderPropertyValue"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/grey_108"
+                app:layout_constraintTop_toBottomOf="@id/tvAgentCanSee" />
+
+            <com.propare.utils.customviews.BoldTextView
+                android:id="@+id/tvQuestionsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/questions"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderPropertyValue" />
+
+            &lt;!&ndash;Question 1&ndash;&gt;
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion1"
+                style="@style/textView_black_201_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/question_1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestionsTitle" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion1Yes"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion1" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion1No"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/no"
+                app:layout_constraintStart_toEndOf="@id/tvQuestion1Yes"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion1" />
+
+            <View
+                android:id="@+id/vdUnderQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/grey_108"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion1Yes" />
+
+            &lt;!&ndash;Question 2&ndash;&gt;
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion2"
+                style="@style/textView_black_201_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/question_2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion1" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion2Yes"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion2" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion2No"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/no"
+                app:layout_constraintStart_toEndOf="@id/tvQuestion2Yes"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion2" />
+
+            <View
+                android:id="@+id/vdUnderQuestion2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/grey_108"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion2Yes" />
+
+            &lt;!&ndash;Question 3&ndash;&gt;
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion3"
+                style="@style/textView_black_201_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/question_3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion2" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion3Yes"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/yes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion3" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion3No"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/no"
+                app:layout_constraintStart_toEndOf="@id/tvQuestion3Yes"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion3" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etQue3Feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_white_curved_5"
+                android:backgroundTint="@color/grey_109"
+                android:gravity="top|start"
+                android:hint="@string/property_feedback"
+                android:inputType="textMultiLine|textCapSentences"
+                android:lines="3"
+                android:maxLength="500"
+                android:maxLines="3"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion3Yes" />
+
+            <View
+                android:id="@+id/vdUnderQuestion3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/grey_108"
+                app:layout_constraintTop_toBottomOf="@id/etQue3Feedback" />
+
+            &lt;!&ndash;Question 4&ndash;&gt;
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion4"
+                style="@style/textView_black_201_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/question_4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion3" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion4Email"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion4" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion4Phone"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/phone"
+                app:layout_constraintStart_toEndOf="@id/tvQuestion4Email"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion4" />
+
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvQuestion4PropareMsg"
+                style="@style/textView_yes_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_grey_outline_curved_10"
+                android:text="@string/propare_messenger"
+                app:layout_constraintStart_toEndOf="@id/tvQuestion4Phone"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion4" />
+
+            <View
+                android:id="@+id/vdUnderQuestion4"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@color/grey_108"
+                app:layout_constraintTop_toBottomOf="@id/tvQuestion4Email" />
+
+            &lt;!&ndash;Question 4&ndash;&gt;
+            <com.propare.utils.customviews.RegularTextView
+                android:id="@+id/tvMyNotes"
+                style="@style/textView_black_201_12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/my_notes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion4" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etMyNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:background="@drawable/box_disable_curved_8"
+                android:backgroundTint="@color/grey_109"
+                android:fontFamily="@font/product_sans_regular"
+                android:gravity="top"
+                android:hint="@string/hint_my_notes"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine|textCapSentences"
+                android:lines="5"
+                android:maxLength="500"
+                android:maxLines="5"
+                android:padding="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintTop_toBottomOf="@id/tvMyNotes" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSave"
+                style="@style/button_active"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/bg_app_theme_button"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/etMyNotes" />
+
+            &lt;!&ndash; <com.propare.utils.customviews.RegularTextView
+                 android:id="@+id/btnCancel"
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_marginStart="@dimen/_5sdp"
+                 android:background="@drawable/box_grey_outline_curved_10"
+                 android:gravity="center"
+                 android:paddingVertical="@dimen/_10sdp"
+                 android:text="@string/cancel"
+                 android:textColor="@color/grey_203"
+                 app:layout_constraintBottom_toBottomOf="@id/btnSave"
+                 app:layout_constraintEnd_toEndOf="parent"
+                 app:layout_constraintStart_toEndOf="@id/btnSave"
+                 app:layout_constraintTop_toTopOf="@id/btnSave" />&ndash;&gt;
+
+        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--Details End-->
+
+        <!--Scoring Start-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clScoring"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/vdUnderTier1Title">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/llRatingScoreTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.rentalhomes.utils.customviews.BoldTextView
+                    android:id="@+id/tvRatingScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating_score"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivRatingScoreAverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp" />
+                <!--                    android:src="@drawable/ic_zero" -->
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <!--                android:text="@string/zero_expectations"-->
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvRatingText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:gravity="center"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@id/llRatingScoreTextView" />
+
+            <!--Location Rating Score-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRSLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/box_white_with_curved_shadow_5"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/tvRatingText">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/location"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvZeroLocation"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableBottom="@drawable/ic_zero"
+                    android:text="@string/zero"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowLocation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+
+                <View
+                    android:id="@+id/vdZeroLocation"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLowLocation"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_low"
+                    android:text="@string/low"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <View
+                    android:id="@+id/vdLowLocation"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvLowLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMeetsLocation"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_meets"
+                    android:text="@string/meets"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvLowLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <View
+                    android:id="@+id/vdMeetsLocation"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvHigherLocation"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_higher"
+                    android:text="@string/higher"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <View
+                    android:id="@+id/vdHigherLocation"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsLocation"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExceedsLocation"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_exceeds"
+                    android:text="@string/exceeds_expectations"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroLocation"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherLocation"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroLocation" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Street Appeal / Neighbours Rating Score-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRSStreetAppeal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/box_white_with_curved_shadow_5"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/clRSLocation">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvStreetAppeal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/street_appeal_neighbours"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvZeroStreetAppeal"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableBottom="@drawable/ic_zero"
+                    android:text="@string/zero"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowStreetAppeal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStreetAppeal" />
+
+                <View
+                    android:id="@+id/vdZeroStreetAppeal"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLowStreetAppeal"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_low"
+                    android:text="@string/low"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <View
+                    android:id="@+id/vdLowStreetAppeal"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvLowStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMeetsStreetAppeal"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_meets"
+                    android:text="@string/meets"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvLowStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <View
+                    android:id="@+id/vdMeetsStreetAppeal"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvHigherStreetAppeal"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_higher"
+                    android:text="@string/higher"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <View
+                    android:id="@+id/vdHigherStreetAppeal"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsStreetAppeal"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExceedsStreetAppeal"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_exceeds"
+                    android:text="@string/exceeds_expectations"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroStreetAppeal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherStreetAppeal"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroStreetAppeal" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Internal Layout / Functionality Rating Score-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRSInternalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/box_white_with_curved_shadow_5"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/clRSStreetAppeal">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvInternalLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/internal_layout_functionality"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvZeroInternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableBottom="@drawable/ic_zero"
+                    android:text="@string/zero"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowInternalLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvInternalLayout" />
+
+                <View
+                    android:id="@+id/vdZeroInternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLowInternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_low"
+                    android:text="@string/low"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <View
+                    android:id="@+id/vdLowInternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvLowInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMeetsInternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_meets"
+                    android:text="@string/meets"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvLowInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <View
+                    android:id="@+id/vdMeetsInternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvHigherInternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_higher"
+                    android:text="@string/higher"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <View
+                    android:id="@+id/vdHigherInternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsInternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExceedsInternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_exceeds"
+                    android:text="@string/exceeds_expectations"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroInternalLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherInternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroInternalLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--External Layout / Functionality Rating Score-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRSExternalLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/box_white_with_curved_shadow_5"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/clRSInternalLayout">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExternalLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/external_layout_functionality"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvZeroExternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableBottom="@drawable/ic_zero"
+                    android:text="@string/zero"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowExternalLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvExternalLayout" />
+
+                <View
+                    android:id="@+id/vdZeroExternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLowExternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_low"
+                    android:text="@string/low"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <View
+                    android:id="@+id/vdLowExternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvLowExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMeetsExternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_meets"
+                    android:text="@string/meets"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvLowExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <View
+                    android:id="@+id/vdMeetsExternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvHigherExternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_higher"
+                    android:text="@string/higher"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <View
+                    android:id="@+id/vdHigherExternalLayout"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsExternalLayout"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExceedsExternalLayout"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_exceeds"
+                    android:text="@string/exceeds_expectations"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroExternalLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherExternalLayout"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroExternalLayout" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Quality of Building & Fittings Rating Score-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clRSQualityBuilding"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/box_white_with_curved_shadow_5"
+                android:padding="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@+id/clRSExternalLayout">
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQualityBuilding"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/quality_of_building_fittings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvZeroQualityBuilding"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:drawableBottom="@drawable/ic_zero"
+                    android:text="@string/zero"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowQualityBuilding"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQualityBuilding" />
+
+                <View
+                    android:id="@+id/vdZeroQualityBuilding"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvLowQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvLowQualityBuilding"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_low"
+                    android:text="@string/low"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <View
+                    android:id="@+id/vdLowQualityBuilding"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvMeetsQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvLowQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMeetsQualityBuilding"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_meets"
+                    android:text="@string/meets"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvLowQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <View
+                    android:id="@+id/vdMeetsQualityBuilding"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvHigherQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvHigherQualityBuilding"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_higher"
+                    android:text="@string/higher"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvMeetsQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <View
+                    android:id="@+id/vdHigherQualityBuilding"
+                    android:layout_width="0.5dp"
+                    android:layout_height="0dp"
+                    android:background="@color/grey_100"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toStartOf="@id/tvExceedsQualityBuilding"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvExceedsQualityBuilding"
+                    style="@style/textView_ratings"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:drawableBottom="@drawable/ic_exceeds"
+                    android:text="@string/exceeds_expectations"
+                    app:layout_constraintBottom_toBottomOf="@id/tvZeroQualityBuilding"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvHigherQualityBuilding"
+                    app:layout_constraintTop_toTopOf="@id/tvZeroQualityBuilding" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!--Property Value-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPropertyValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginHorizontal="@dimen/_3sdp"
+                app:layout_constraintTop_toBottomOf="@+id/clRSQualityBuilding">
+
+                <com.rentalhomes.utils.customviews.BoldTextView
+                    android:id="@+id/tvPropertyValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/property_value"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMarketValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_3sdp"
+                    android:text="@string/market_value"
+                    android:textColor="@color/grey_600"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toStartOf="@id/tvMyValuation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPropertyValue" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvMyValuation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/my_valuation"
+                    android:textColor="@color/grey_600"
+                    android:textSize="@dimen/_10sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvMarketValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvPropertyValue" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMarketValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/box_white_curved_5"
+                    android:backgroundTint="@color/grey_109"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:maxLines="1"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/tvMarketValue"
+                    app:layout_constraintStart_toStartOf="@id/tvMarketValue"
+                    app:layout_constraintTop_toBottomOf="@id/tvMarketValue" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvDollarMarketValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/dollar_sign"
+                    android:textColor="@color/grey_103"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/etMarketValue"
+                    app:layout_constraintStart_toStartOf="@id/etMarketValue"
+                    app:layout_constraintTop_toTopOf="@id/etMarketValue" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/etMyValuation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/box_white_curved_5"
+                    android:backgroundTint="@color/grey_109"
+                    android:inputType="number"
+                    android:maxLength="13"
+                    android:maxLines="1"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:paddingStart="@dimen/_20sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintEnd_toEndOf="@id/tvMyValuation"
+                    app:layout_constraintStart_toStartOf="@id/tvMyValuation"
+                    app:layout_constraintTop_toBottomOf="@id/tvMyValuation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvDollarMyValuation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:text="@string/dollar_sign"
+                    android:textColor="@color/grey_103"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/etMyValuation"
+                    app:layout_constraintStart_toStartOf="@id/etMyValuation"
+                    app:layout_constraintTop_toTopOf="@id/etMyValuation" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvAgentCanSee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/agent_can_see_this"
+                    android:textColor="@color/grey_400"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="@id/etMarketValue"
+                    app:layout_constraintTop_toBottomOf="@id/etMarketValue" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvYouCanSee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/only_you_can_see_this"
+                    android:textColor="@color/grey_400"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintEnd_toEndOf="@id/etMyValuation"
+                    app:layout_constraintTop_toBottomOf="@id/etMyValuation" />
+
+                <View
+                    android:id="@+id/vdUnderPropertyValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/grey_108"
+                    app:layout_constraintTop_toBottomOf="@id/tvAgentCanSee" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnTier1RatingSave"
+                style="@style/button_active"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/bg_app_theme_button"
+                android:gravity="center"
+                android:paddingVertical="@dimen/_10sdp"
+                android:text="@string/save"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/clPropertyValue" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Scoring End-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:background="@drawable/user_select_unchecked"
+        android:paddingVertical="@dimen/_10sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertical_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glVertical_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.74" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:src="@drawable/ic_profile_place_holder"
+            app:civ_border_color="@color/grey_100"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvBuyerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/tvFilterType"
+            app:layout_constraintStart_toEndOf="@id/ivProfile"
+            app:layout_constraintTop_toTopOf="@id/ivProfile"
+            tools:text="@string/user_name_dummy" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@+id/tvBuyerName"
+            app:layout_constraintStart_toStartOf="@+id/tvBuyerName"
+            app:layout_constraintTop_toBottomOf="@id/tvBuyerName"
+            tools:text="@string/dummy_date" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvFilterType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="@drawable/bg_hot_warm_cold"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            android:text="@string/hot"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintBottom_toBottomOf="@id/tvBuyerName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvBuyerName"
+            app:layout_constraintTop_toTopOf="@id/tvBuyerName" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivChat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_comment"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Tier 1-->
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/tier_1"
+            android:textColor="@color/color_green"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdVertical1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvNoDataTier1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/no_data_available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTier1" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvRatingScoreTier1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/rating_score"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTier1" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRatingScoreTier1"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_exceeds"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingScoreTier1"
+            app:layout_constraintStart_toEndOf="@id/tvRatingScoreTier1"
+            app:layout_constraintTop_toTopOf="@id/tvRatingScoreTier1" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvHETier1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_7ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdVertical1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingScoreTier1"
+            tools:text="@string/higher_than_expectations" />
+
+        <View
+            android:id="@+id/vdVertical1"
+            android:layout_width="0.8dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/grey_104"
+            app:layout_constraintBottom_toTopOf="@id/llButtons"
+            app:layout_constraintStart_toEndOf="@id/glVertical_1"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <!--Tier 2-->
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/tier_2"
+            android:textColor="@color/color_green"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdVertical2"
+            app:layout_constraintStart_toEndOf="@id/vdVertical1"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvNoDataTier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/no_data_available"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/tvTier2"
+            app:layout_constraintTop_toBottomOf="@id/tvTier2" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvRatingScoreTier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/rating_score"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="@id/tvTier2"
+            app:layout_constraintTop_toBottomOf="@id/tvTier2" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivRatingScoreTier2"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_exceeds"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingScoreTier2"
+            app:layout_constraintStart_toEndOf="@id/tvRatingScoreTier2"
+            app:layout_constraintTop_toTopOf="@id/tvRatingScoreTier2" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvHETier2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:text="@string/higher_than_expectations"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_7ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdVertical2"
+            app:layout_constraintStart_toStartOf="@id/tvTier2"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingScoreTier2" />
+
+        <View
+            android:id="@+id/vdVertical2"
+            android:layout_width="0.8dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:background="@color/grey_104"
+            app:layout_constraintBottom_toTopOf="@id/llButtons"
+            app:layout_constraintStart_toEndOf="@id/glVertical_2"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <!--Tier 2-->
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTier3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:text="@string/tier_3"
+            android:textColor="@color/color_green"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/vdVertical2"
+            app:layout_constraintTop_toBottomOf="@id/ivProfile" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLike"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/ic_like"
+            android:tint="@color/color_green"
+            app:layout_constraintStart_toStartOf="@id/tvTier3"
+            app:layout_constraintTop_toBottomOf="@id/tvTier3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDisLike"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:src="@drawable/ic_dislike"
+            android:tint="@color/red_101"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivLike"
+            app:layout_constraintTop_toBottomOf="@id/tvTier3" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvLikeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/color_green"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="@id/ivLike"
+            app:layout_constraintTop_toBottomOf="@id/ivLike"
+            tools:text="40" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvLikePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toEndOf="@id/tvLikeCount"
+            app:layout_constraintTop_toBottomOf="@id/ivLike"
+            tools:text="80%" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvDisLikeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toStartOf="@id/ivDisLike"
+            app:layout_constraintTop_toBottomOf="@id/ivDisLike"
+            tools:text="10" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvDisLikePercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:textColor="@color/grey_600"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintStart_toEndOf="@id/tvDisLikeCount"
+            app:layout_constraintTop_toBottomOf="@id/ivDisLike"
+            tools:text="20%" />
+
+        <LinearLayout
+            android:id="@+id/llButtons"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:baselineAligned="false"
+            android:visibility="visible"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHETier2">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvViewRatings"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:backgroundTint="@color/yellow_100"
+                android:gravity="center"
+                android:text="@string/view_ratings"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp" />
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvChatNow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:backgroundTint="@color/green_101"
+                android:gravity="center"
+                android:text="@string/chat_now"
+                android:textColor="@color/grey_600"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

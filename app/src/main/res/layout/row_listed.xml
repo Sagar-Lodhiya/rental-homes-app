@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_140sdp"
+            android:layout_marginHorizontal="@dimen/_14sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@drawable/ic_proparty_listing_placeholder"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivProperty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/ic_proparty_listing_placeholder" />
+        </androidx.cardview.widget.CardView>
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:maxLines="2"
+            android:textColor="@color/black_201"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toStartOf="@id/tvDate"
+            app:layout_constraintStart_toStartOf="@id/cardView"
+            app:layout_constraintTop_toBottomOf="@id/cardView"
+            tools:text="136/416 St Kilda Road" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:textColor="@color/grey_500"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toEndOf="@+id/tvAddress"
+            app:layout_constraintStart_toStartOf="@id/tvAddress"
+            app:layout_constraintTop_toBottomOf="@id/tvAddress"
+            tools:text="Melbourne, VIC 3004" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:textColor="@color/grey_500"
+            app:layout_constraintEnd_toEndOf="@id/cardView"
+            app:layout_constraintTop_toTopOf="@id/tvAddress"
+            tools:text="21 Jul 2021" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

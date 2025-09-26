@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="buyerFeedbackVM"
+            type="com.rentalhomes.ui.agent.buyerFeedback.BuyerFeedbackVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingBottom="@dimen/_15sdp"
+        tools:context=".ui.agent.buyerFeedback.BuyerFeedbackActivity">
+
+        <!--Header-->
+        <include
+            android:id="@+id/headerBar"
+            layout="@layout/header_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Address & QR Code-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="@drawable/bg_green"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerBar">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:maxLines="2"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_11ssp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/ivQrCode"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="136/416 St Kilda Road" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivLocation"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                app:srcCompat="@drawable/ic_location_pin" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
+                app:layout_constraintEnd_toEndOf="@+id/tvAddress"
+                app:layout_constraintStart_toEndOf="@id/ivLocation"
+                app:layout_constraintTop_toTopOf="@+id/ivLocation"
+                tools:text="Melbourne, VIC 3004" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivQrCode"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_qr" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/llTierType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_green"
+            android:backgroundTint="@color/yellow_100"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/_7sdp"
+            android:weightSum="4"
+            app:layout_constraintEnd_toEndOf="@+id/clAddress"
+            app:layout_constraintStart_toStartOf="@+id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/clAddress">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBuyerFeedback"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_app_theme_button"
+                android:backgroundTint="@color/yellow_200"
+                android:gravity="center"
+                android:onClick="@{()->buyerFeedbackVM.onFeedbackClicked()}"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/feedback"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTier1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/yellow_200"
+                android:gravity="center"
+                android:onClick="@{()->buyerFeedbackVM.onTier1Clicked()}"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/tier_1"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTier2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/yellow_200"
+                android:gravity="center"
+                android:onClick="@{()->buyerFeedbackVM.onTier2Clicked()}"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/tier_2"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_12ssp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTier3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="@color/yellow_200"
+                android:gravity="center"
+                android:onClick="@{()->buyerFeedbackVM.onTier3Clicked()}"
+                android:paddingHorizontal="@dimen/_5sdp"
+                android:paddingVertical="@dimen/_7sdp"
+                android:text="@string/tier_3"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <!--Feedback Data-->
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvFeedback"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clAddress"
+            app:layout_constraintStart_toStartOf="@id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/llTierType">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivUser"
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_profile_place_holder"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.BoldTextView
+                    android:id="@+id/tvUserName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/grey_200"
+                    android:textSize="@dimen/_12ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivUser"
+                    app:layout_constraintTop_toTopOf="@id/ivUser" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    android:gravity="start"
+                    android:textColor="@color/grey_200"
+                    android:textSize="@dimen/_10ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/tvUserName"
+                    app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvFeedback"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:gravity="start"
+                    android:textColor="@color/grey_200"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivUser" />
+
+                <View
+                    android:id="@+id/viewLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/grey_108"
+                    app:layout_constraintTop_toBottomOf="@id/tvFeedback" />
+
+                <!--Question 1-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion1"
+                    style="@style/textView_black_201_12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/question_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion1Yes"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/yes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion1" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion1No"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/no"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvQuestion1Yes"
+                    app:layout_constraintStart_toEndOf="@id/tvQuestion1Yes"
+                    app:layout_constraintTop_toTopOf="@+id/tvQuestion1Yes" />
+
+                <View
+                    android:id="@+id/vdUnderQuestion1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/grey_108"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion1Yes" />
+
+                <!--Question 2-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion2"
+                    style="@style/textView_black_201_12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/question_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion1" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion2Yes"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/yes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion2" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion2No"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/no"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvQuestion2Yes"
+                    app:layout_constraintStart_toEndOf="@id/tvQuestion2Yes"
+                    app:layout_constraintTop_toTopOf="@+id/tvQuestion2Yes" />
+
+                <View
+                    android:id="@+id/vdUnderQuestion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/grey_108"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion2Yes" />
+
+                <!--Question 4-->
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion4"
+                    style="@style/textView_black_201_12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:text="@string/question_4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/vdUnderQuestion2" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion4Email"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion4" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion4Phone"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/phone"
+                    app:layout_constraintBottom_toBottomOf="@id/tvQuestion4Email"
+                    app:layout_constraintStart_toEndOf="@id/tvQuestion4Email"
+                    app:layout_constraintTop_toTopOf="@+id/tvQuestion4Email" />
+
+                <com.rentalhomes.utils.customviews.RegularTextView
+                    android:id="@+id/tvQuestion4PropareMsg"
+                    style="@style/textView_yes_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:background="@drawable/box_grey_outline_curved_10"
+                    android:text="@string/propare_messenger"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvQuestion4Email"
+                    app:layout_constraintStart_toEndOf="@id/tvQuestion4Phone"
+                    app:layout_constraintTop_toTopOf="@+id/tvQuestion4Email" />
+
+                <View
+                    android:id="@+id/vdUnderQuestion4"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@color/grey_108"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/tvQuestion4Email" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivNoData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/no_data_found" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!--Tier 1 Data-->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvTier1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clAddress"
+            app:layout_constraintStart_toStartOf="@id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/llTierType">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTier1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/row_feedback_data" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cvMarketValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@drawable/bg_app_theme_button"
+                    android:backgroundTint="@color/green_101"
+                    android:padding="@dimen/_12sdp"
+                    app:layout_constraintEnd_toEndOf="@id/rvTier1"
+                    app:layout_constraintStart_toStartOf="@id/rvTier1"
+                    app:layout_constraintTop_toBottomOf="@id/rvTier1">
+
+                    <com.rentalhomes.utils.customviews.RegularTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_weight="1.7"
+                        android:text="@string/market_value"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/tvMarketValue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.rentalhomes.utils.customviews.BoldTextView
+                        android:id="@+id/tvMarketValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$10,000,000"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <!--Tier 2 Data-->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvTier2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clAddress"
+            app:layout_constraintStart_toStartOf="@id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/llTierType">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTier2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:itemCount="15"
+                    tools:listitem="@layout/row_feedback_data" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNoDataT2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clAddress"
+            app:layout_constraintStart_toStartOf="@id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/llTierType"
+            app:srcCompat="@drawable/no_data_found" />
+
+        <!--Tier 3 Data-->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvTier3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/clAddress"
+            app:layout_constraintStart_toStartOf="@id/clAddress"
+            app:layout_constraintTop_toBottomOf="@id/llTierType">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivLike"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:src="@drawable/ic_like"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.rentalhomes.utils.customviews.BoldTextView
+                    android:id="@+id/tvLikeCounts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:text="0 / 0%"
+                    android:textColor="@color/color_green"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivLike"
+                    app:layout_constraintStart_toEndOf="@id/ivLike"
+                    app:layout_constraintTop_toTopOf="@id/ivLike" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDisLike"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:src="@drawable/ic_dislike"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivLike"
+                    app:layout_constraintEnd_toStartOf="@id/tvDisLikeCounts"
+                    app:layout_constraintTop_toTopOf="@+id/ivLike" />
+
+                <com.rentalhomes.utils.customviews.BoldTextView
+                    android:id="@+id/tvDisLikeCounts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="0 / 0%"
+                    android:textColor="@color/red_101"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/ivLike"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/ivLike" />
+
+                <ProgressBar
+                    android:id="@+id/pbFeatures"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:progressDrawable="@drawable/progress_bar_features"
+                    app:layout_constraintEnd_toEndOf="@+id/tvDisLikeCounts"
+                    app:layout_constraintStart_toStartOf="@+id/ivLike"
+                    app:layout_constraintTop_toBottomOf="@id/ivLike" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTier3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pbFeatures"
+                    tools:itemCount="4"
+                    tools:listitem="@layout/row_features_parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

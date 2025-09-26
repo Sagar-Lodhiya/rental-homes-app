@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.yanzhenjie:mediascanner:1.0.3@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/f4a3bf82496c53230c4d622414ae94e5/transformed/jetified-mediascanner-1.0.3/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/f4a3bf82496c53230c4d622414ae94e5/transformed/jetified-mediascanner-1.0.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yanzhenjie/mediascanner/1.0.3/7a57e8c4e91957f758176c0f1ddaf603ed953474/mediascanner-1.0.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.yanzhenjie/mediascanner/1.0.3/b73294d3e472294c4d593dbe960fa05426397f34/mediascanner-1.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

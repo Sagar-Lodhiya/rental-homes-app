@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
+        android:minHeight="@dimen/_500sdp"
+        android:paddingBottom="@dimen/_20sdp">
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:text="@string/select_user_to_compare"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvSubTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@string/bottom_user_compare_sub_title"
+            android:textColor="@color/grey_light"
+            android:textSize="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        <!--Link TextBox Layout-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLink"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/user_select_unchecked"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubTitle">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/etLink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/product_sans_regular"
+                android:hint="@string/enter_email"
+                android:imeOptions="actionDone"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingVertical="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/grey_light"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvLink"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/link"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:textColor="@color/grey_light"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintEnd_toStartOf="@id/view"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0.5dp"
+                android:layout_height="0dp"
+                android:background="@color/grey_light"
+                app:layout_constraintEnd_toStartOf="@id/ivScanUser"
+                app:layout_constraintTop_toTopOf="@id/etLink"
+                app:layout_constraintBottom_toBottomOf="@id/etLink"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivScanUser"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="0dp"
+                android:padding="@dimen/_7sdp"
+                app:srcCompat="@drawable/ic_scan_qr"
+                app:layout_constraintTop_toTopOf="@id/etLink"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/etLink"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLinkList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clLink"
+            tools:itemCount="3"
+            tools:listitem="@layout/row_user_link_compare" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivNoData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rvLinkList"
+            app:layout_constraintEnd_toEndOf="@id/rvLinkList"
+            app:layout_constraintStart_toStartOf="@id/rvLinkList"
+            app:layout_constraintTop_toTopOf="@id/rvLinkList"
+            app:srcCompat="@drawable/no_data_found" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

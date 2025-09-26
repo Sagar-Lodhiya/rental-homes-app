@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/clNotification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/vdTop"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:background="@color/grey_100"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:textColor="@color/black_102"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdMailBG"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintTop_toBottomOf="@id/vdTop"
+            tools:text="Dear Agents. Warm greetings from the propare team. We hope that your experience has been a fantastic experience so far. We’d love to hear from you" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvTimeStamp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:textColor="@color/grey_103"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintEnd_toStartOf="@id/vdMailBG"
+            app:layout_constraintStart_toStartOf="@id/tvMessage"
+            app:layout_constraintTop_toBottomOf="@id/tvMessage"
+            tools:text="2 min ago" />
+
+        <View
+            android:id="@+id/vdMailBG"
+            android:layout_width="@dimen/_26sdp"
+            android:layout_height="@dimen/_26sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/circle_green_light"
+            android:backgroundTint="@color/color_green"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivMailIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mail"
+            app:layout_constraintBottom_toBottomOf="@id/vdMailBG"
+            app:layout_constraintEnd_toEndOf="@id/vdMailBG"
+            app:layout_constraintStart_toStartOf="@id/vdMailBG"
+            app:layout_constraintTop_toTopOf="@id/vdMailBG" />
+
+        <View
+            android:id="@+id/vdBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0.8dp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/grey_100"
+            app:layout_constraintTop_toBottomOf="@id/tvTimeStamp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

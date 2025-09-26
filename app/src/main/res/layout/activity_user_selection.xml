@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userSelectionVM"
+            type="com.rentalhomes.ui.common.signup.UserSelectionVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingHorizontal="@dimen/_22sdp"
+        tools:context=".ui.common.signup.UserSelectionActivity">
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:text="Welcome to,"
+            android:textColor="@color/grey_700"
+            android:textSize="@dimen/_22ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+            app:srcCompat="@drawable/logo_1" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvIam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:text="I am a..."
+            android:textColor="@color/grey_300"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivLogo" />
+
+        <LinearLayout
+            android:id="@+id/llUserSelect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvIam">
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvAgentSelect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/user_select_checked_signup"
+                android:gravity="center"
+                android:onClick="@{()->userSelectionVM.onSelectionClick(0)}"
+                android:paddingVertical="@dimen/_27sdp"
+                android:text="@string/txt_agent"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/_18ssp" />
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvBuyerSelect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:background="@drawable/user_select_unchecked"
+                android:gravity="center"
+                android:onClick="@{()->userSelectionVM.onSelectionClick(1)}"
+                android:paddingVertical="@dimen/_27sdp"
+                android:text="@string/txt_buyer"
+                android:textColor="@color/grey_700"
+                android:textSize="@dimen/_18ssp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:background="@drawable/bg_app_theme_button"
+            android:elevation="0dp"
+            android:fontFamily="@font/product_sans_bold"
+            android:onClick="@{()->userSelectionVM.onCreateAccount()}"
+            android:stateListAnimator="@null"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llUserSelect" />
+
+        <!--Do not have account-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDoNotHaveAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvDoNotHaveAcc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/already_have_an_account"
+                android:textColor="@color/grey_101"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvSignIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:text="@string/sign_in"
+                android:textAllCaps="true"
+                android:textColor="@color/color_green"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvDoNotHaveAcc"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

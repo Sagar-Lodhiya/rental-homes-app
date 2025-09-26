@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRatingScore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/box_white_with_curved_shadow_5"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tvRatingText">
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvRatingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cbNA"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:button="@drawable/selector_cancel_discancel"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingName"
+            app:layout_constraintEnd_toStartOf="@id/tvNA"
+            app:layout_constraintTop_toTopOf="@id/tvRatingName" />
+
+        <com.rentalhomes.utils.customviews.BoldTextView
+            android:id="@+id/tvNA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/n_a"
+            android:textColor="@color/grey_202"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintBottom_toBottomOf="@id/tvRatingName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvRatingName" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvZero"
+            style="@style/textView_ratings"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:drawableBottom="@drawable/ic_zero"
+            android:text="@string/zero"
+            app:layout_constraintEnd_toStartOf="@id/tvLow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRatingName" />
+
+        <View
+            android:id="@+id/vdZero"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_100"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvLow"
+            app:layout_constraintStart_toEndOf="@id/tvZero"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvLow"
+            style="@style/textView_ratings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableBottom="@drawable/ic_low"
+            android:text="@string/low"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvMeets"
+            app:layout_constraintStart_toEndOf="@id/tvZero"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <View
+            android:id="@+id/vdLow"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_100"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvMeets"
+            app:layout_constraintStart_toEndOf="@id/tvLow"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvMeets"
+            style="@style/textView_ratings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableBottom="@drawable/ic_meets"
+            android:text="@string/meets"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvHigher"
+            app:layout_constraintStart_toEndOf="@id/tvLow"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <View
+            android:id="@+id/vdMeets"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_100"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvHigher"
+            app:layout_constraintStart_toEndOf="@id/tvMeets"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvHigher"
+            style="@style/textView_ratings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableBottom="@drawable/ic_higher"
+            android:text="@string/higher"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvExceeds"
+            app:layout_constraintStart_toEndOf="@id/tvMeets"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <View
+            android:id="@+id/vdHigher"
+            android:layout_width="0.5dp"
+            android:layout_height="0dp"
+            android:background="@color/grey_100"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toStartOf="@id/tvExceeds"
+            app:layout_constraintStart_toEndOf="@id/tvHigher"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+
+        <com.rentalhomes.utils.customviews.RegularTextView
+            android:id="@+id/tvExceeds"
+            style="@style/textView_ratings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:drawableBottom="@drawable/ic_exceeds"
+            android:text="@string/exceeds_expectations"
+            app:layout_constraintBottom_toBottomOf="@id/tvZero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvHigher"
+            app:layout_constraintTop_toTopOf="@id/tvZero" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

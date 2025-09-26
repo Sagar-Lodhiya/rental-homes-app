@@ -1,0 +1,313 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.propare" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/color_green</item>
+        <item name="colorPrimaryVariant">@color/color_green</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/color_green</item>
+        <item name="colorSecondaryVariant">@color/color_green</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!-- Customize your theme here. -->
+
+        <!--Added for apply color to status bar at open place picker-->
+        <item name="colorPrimaryDark">@color/color_green</item>
+
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialogTheme</item>
+    </style>
+
+    <style name="ProgressDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+        <item name="colorPrimary">@android:color/transparent</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <!--        <item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <!--<item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/slide_down</item>-->
+    </style>
+
+    <style name="textView_validation">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:layout_marginTop">@dimen/_2sdp</item>
+    </style>
+
+    <style name="textView_black_16sp">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_16ssp</item>
+    </style>
+
+    <style name="textView_grey_700_14sp">
+        <item name="android:textColor">@color/grey_700</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="textView_grey_100_12sp">
+        <item name="android:textColor">@color/grey_100</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="textView_black_201_12sp">
+        <item name="android:textColor">@color/black_201</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="textView_bed_bath_car">
+        <item name="android:textColor">@color/grey_600</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/_10sdp</item>
+    </style>
+
+    <style name="textView_black_201_14sp">
+        <item name="android:textColor">@color/black_201</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="textView_grey_202_11sp">
+        <item name="android:textColor">@color/grey_202</item>
+        <item name="android:textSize">@dimen/_11ssp</item>
+        <item name="android:padding">@dimen/_2sdp</item>
+    </style>
+
+    <style name="textView_yes_no">
+        <item name="android:textColor">@color/grey_400</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+        <item name="android:paddingVertical">@dimen/_3sdp</item>
+        <item name="android:paddingHorizontal">@dimen/_12sdp</item>
+    </style>
+
+    <style name="textView_ratings_feedback">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">@dimen/_5sdp</item>
+        <item name="android:paddingTop">@dimen/_5sdp</item>
+    </style>
+
+    <style name="textView_ratings">
+        <item name="android:textColor">@color/grey_203</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+        <item name="android:drawablePadding">@dimen/_5sdp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+        <item name="android:alpha">0.4</item>
+    </style>
+
+    <style name="editText_edit_profile">
+        <item name="android:textColor">@color/grey_200</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:layout_marginTop">@dimen/_8sdp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="editText_border_grey_corner_10">
+        <item name="android:textColor">@color/grey_200</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:paddingVertical">@dimen/_10sdp</item>
+        <item name="android:paddingHorizontal">@dimen/_5sdp</item>
+    </style>
+
+    <style name="editText_password">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey_200</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:paddingVertical">@dimen/_5sdp</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:digits">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890$@$!%*?&amp;~`
+        </item>
+        <item name="maxLines">1</item>
+        <item name="android:lines">1</item>
+        <item name="android:maxLength">22</item>
+    </style>
+
+    <style name="editText_change_email">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey_100</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:paddingVertical">@dimen/_8sdp</item>
+        <item name="android:paddingHorizontal">@dimen/_10sdp</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="maxLines">1</item>
+        <item name="android:lines">1</item>
+    </style>
+
+    <style name="editText_change_password">
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey_100</item>
+        <item name="fontFamily">@font/product_sans_regular</item>
+        <item name="android:paddingVertical">@dimen/_8sdp</item>
+        <item name="android:paddingHorizontal">@dimen/_10sdp</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:digits">
+            ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890$@$!%*?&amp;~`
+        </item>
+        <item name="android:singleLine">true</item>
+        <item name="android:maxLength">16</item>
+    </style>
+
+    <style name="button_active">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="button_de_active">
+        <item name="android:textColor">@color/grey_101</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:fontFamily">@font/product_sans_bold</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+
+    <style name="customRoundedImageView" parent="Theme.MaterialComponents">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">0dp</item>
+        <item name="cornerSizeTopRight">18dp</item>
+        <item name="cornerSizeTopLeft">18dp</item>
+    </style>
+
+    <!--Chat module themes-->
+    <style name="ChatEditTextStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="ChatBubbleMessageStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:autoLink">all</item>
+        <item name="android:linksClickable">true</item>
+        <item name="android:textColorLink">@color/dark_blue</item>
+    </style>
+
+    <style name="ChatDayTextStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="ChatBubbleTimeStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="ChatBubbleAlbumTimeStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_8ssp</item>
+    </style>
+
+    <style name="ChatBubbleRetryStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_8sdp</item>
+    </style>
+
+    <style name="RecentChatRoomNameStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/dark_gray</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+    </style>
+
+    <style name="FullScreenDialogStyle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorPrimary">@color/colorBlueTheme</item>
+
+        <!-- Set this to true if you want Full Screen without status bar -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+        <!--        <item name="android:windowContentOverlay">@null</item>-->
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <!-- This is important! Don't forget to set window background -->
+        <item name="android:windowBackground">@color/black</item>
+
+        <!-- Additionally if you want animations when dialog opening -->
+        <!--<item name="android:windowEnterAnimation">@anim/slide_up</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/slide_down</item>-->
+    </style>
+
+    <style name="RecentChatTitleStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <!--        <item name="android:textColor">@color/black</item>-->
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+    </style>
+
+    <style name="RecentChatRoomMessageStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <!--        <item name="android:textColor">@color/black</item>-->
+        <item name="android:textSize">@dimen/_12ssp</item>
+    </style>
+
+    <style name="RecentChatMessageTimeStyle">
+        <item name="android:fontFamily">@font/product_sans_regular</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:textSize">@dimen/_10ssp</item>
+    </style>
+
+    <style name="ChatInputTextLayoutStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_layout_stroke_color</item>
+        <item name="boxStrokeWidth">0.5dp</item>
+        <item name="boxStrokeWidthFocused">0.5dp</item>
+    </style>
+
+    <style name="SearchInputTextLayoutStyle" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_layout_stroke_color</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+    </style>
+
+    <style name="editText_otp">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:paddingTop">@dimen/_10sdp</item>
+        <item name="android:paddingBottom">@dimen/_10sdp</item>
+        <item name="android:paddingStart">@dimen/_16sdp</item>
+        <item name="android:paddingEnd">@dimen/_16sdp</item>
+        <item name="android:inputType">number</item>
+        <item name="maxLines">1</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+</resources>

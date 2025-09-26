@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.rentalhomes.ui.buyer.nonlistedproperty.SwipeRevealLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_210sdp"
+        android:fadingEdge="horizontal"
+        app:dragFromEdge="right">
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|end"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clEditProperty"
+                    android:layout_width="wrap_content"
+                    android:background="#37B55A"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnEdit"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/edit_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clDeleteProperty"
+                    android:layout_width="wrap_content"
+                    android:background="#F56868"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/btnDelete"
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:srcCompat="@drawable/delete_icon"
+                         />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:clickable="true"
+            android:paddingBottom="@dimen/_10sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginHorizontal="@dimen/_14sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:background="@color/white"
+                app:cardCornerRadius="@dimen/_6sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivProperty"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/house" />
+            </androidx.cardview.widget.CardView>
+
+            <com.rentalhomes.utils.customviews.BoldTextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_1sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:maxLines="2"
+                android:textColor="@color/black_201"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toStartOf="@+id/tvDate"
+                app:layout_constraintStart_toStartOf="@id/cardView"
+                app:layout_constraintTop_toBottomOf="@id/cardView"
+                tools:text="136/416 St Kilda Road" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4ssp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="@+id/tvAddress"
+                app:layout_constraintStart_toStartOf="@id/tvAddress"
+                app:layout_constraintTop_toBottomOf="@id/tvAddress"
+                tools:text="Melbourne, VIC 3004" />
+
+            <com.rentalhomes.utils.customviews.RegularTextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_17sdp"
+                android:textColor="@color/grey_500"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvAddress"
+                tools:text="21 Jul 2021" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.rentalhomes.ui.buyer.nonlistedproperty.SwipeRevealLayout>
+</layout>
