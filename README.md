@@ -1,45 +1,96 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# RENTAL-HOMES-APP
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+_Find Your Perfect Home, Effortlessly and Fast_
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+![Last Commit](https://img.shields.io/github/last-commit/yourusername/rental-homes-app)  
+![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue)  
+![Languages](https://img.shields.io/github/languages/count/yourusername/rental-homes-app)
 
----
+**Built with the tools and technologies:**
 
-## Edit a file
-
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
-
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text:
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
-
----
-
-## Create a file
-
-Next, you’ll add a new file to this repository.
-
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
-
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+![JSON](https://img.shields.io/badge/JSON-Enabled-brightgreen)  
+![JetBrains](https://img.shields.io/badge/JetBrains-IDE-lightgrey)  
+![Markdown](https://img.shields.io/badge/Markdown-Docs-blue)  
+![GitHub](https://img.shields.io/badge/GitHub-Repo-black)  
+![Features](https://img.shields.io/badge/Features-Advanced-green)  
+![Android](https://img.shields.io/badge/Android-SDK-success)  
+![Gradle](https://img.shields.io/badge/Gradle-Build-yellowgreen)  
+![Kotlin](https://img.shields.io/badge/Kotlin-Language-purple)
 
 ---
 
-## Clone a repository
+## Table of Contents
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Testing](#testing)
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+---
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+## Overview
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+**rental-homes-app** is a feature-rich Android application designed to streamline property management and rental workflows.  
+It integrates advanced media handling, user authentication, and real estate–specific features into a cohesive platform.
+
+### Why rental-homes-app?
+
+This project aims to deliver a scalable and maintainable rental property solution.  
+The core features include:
+
+- 🛠 **Gear Icon:** Modular architecture supporting Android, Kotlin, and Google services for flexible development.
+- 🚀 **Rocket:** Automated build process with Gradle for consistent, reliable app compilation.
+- 📷 **Camera:** Robust media management, including cropping, browsing, and QR code scanning.
+- 🔑 **Key:** Secure user authentication and profile management tailored for agents and buyers.
+- 💬 **Speech Balloon:** Integrated feedback, messaging, and notification systems to enhance user engagement.
+- 🔧 **Wrench:** Utility functions for permissions, network checks, and UI enhancements to streamline development.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+This project requires the following dependencies:
+
+- **Programming Language:** Kotlin  
+- **Package Manager:** Gradle  
+
+---
+
+### Installation
+
+Build **rental-homes-app** from source and install dependencies:
+
+1. **Clone the repository:**
+```bash
+git clone https://github.com/yourusername/rental-homes-app
+```
+
+2. **Navigate to the project directory:**
+```bash
+cd rental-homes-app
+```
+
+3. **Install the dependencies:**
+```bash
+gradle build
+```
+
+---
+
+### Usage
+
+You can now open the project in **Android Studio** or any JetBrains IDE that supports Kotlin.  
+Run the app on an emulator or physical device to explore its features.
+
+---
+
+### Testing
+
+Run the following command to execute all tests:
+```bash
+gradle test
+```
+
